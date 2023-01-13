@@ -1,9 +1,4 @@
 from flet import *
-import plotly.express as px
-from flet.plotly_chart import PlotlyChart
-
-
-
 class CustomCheckBox(UserControl):
   def __init__(self,color,label='',selection_fill='#183588',size=25,stroke_width=2,animation=None, checked=False, font_size=17, pressed=None):
     super().__init__()
