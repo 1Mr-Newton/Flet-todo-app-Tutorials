@@ -246,6 +246,7 @@ def main(page: Page):
       ]
     )
   )
+  
   page_2 = Row(alignment='end',
     controls=[
       Container(
@@ -275,6 +276,8 @@ def main(page: Page):
     border_radius=35,
     content=Stack(
       controls=[
+        page_1,
+        page_2,
         
       ]
 
