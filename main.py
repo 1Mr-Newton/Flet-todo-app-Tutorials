@@ -169,8 +169,8 @@ def main(page: Page):
     )
 
     page_1 = Container(
-        width=400,
-        height=850,
+        # width=400,
+        # height=850,
         bgcolor=BG,
         border_radius=35,
         padding=padding.only(left=50, top=60, right=200),
@@ -185,15 +185,15 @@ def main(page: Page):
                                 top=13,
                                 left=13,
                             ),
-                            height=50,
-                            width=50,
+                            # height=50,
+                            # width=50,
                             border=border.all(color="white", width=1),
                             on_click=lambda e: restore(e),
                             content=Text("<"),
                         )
                     ],
                 ),
-                Container(height=20),
+                Container(height=20),  # height=20
                 circle,
                 Text("Olivia\nMitchel", size=32, weight="bold"),
                 Container(height=25),
@@ -257,8 +257,8 @@ def main(page: Page):
         alignment="end",
         controls=[
             Container(
-                width=400,
-                height=850,
+                # width=400,
+                # height=850,
                 bgcolor=FG,
                 border_radius=35,
                 animate=animation.Animation(600, AnimationCurve.DECELERATE),
@@ -270,8 +270,8 @@ def main(page: Page):
     )
 
     container = Container(
-        width=400,
-        height=850,
+        # width=400,
+        # height=850,
         bgcolor=BG,
         border_radius=35,
         content=Stack(
