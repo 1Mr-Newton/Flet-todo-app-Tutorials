@@ -1,4 +1,5 @@
 from flet import *
+
 from custom_checkbox import CustomCheckBox
 
 
@@ -38,7 +39,7 @@ def main(page: Page):
                                 border_radius=40,
                                 content=CircleAvatar(
                                     opacity=0.8,
-                                    foreground_image_url="https://images.unsplash.com/photo-1545912452-8aea7e25a3d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+                                    foreground_image_src="https://images.unsplash.com/photo-1545912452-8aea7e25a3d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
                                 ),
                             ),
                         )
@@ -257,8 +258,8 @@ def main(page: Page):
         alignment="end",
         controls=[
             Container(
-                # width=400,
-                # height=850,
+                width=400,
+                height=850,
                 bgcolor=FG,
                 border_radius=35,
                 animate=animation.Animation(600, AnimationCurve.DECELERATE),
@@ -270,8 +271,8 @@ def main(page: Page):
     )
 
     container = Container(
-        # width=400,
-        # height=850,
+        width=400,
+        height=850,
         bgcolor=BG,
         border_radius=35,
         content=Stack(
@@ -285,7 +286,9 @@ def main(page: Page):
     pages = {
         "/": View(
             "/",
-            [container],
+            [
+                container,
+            ],
         ),
         "/create_task": View(
             "/create_task",
@@ -295,7 +298,9 @@ def main(page: Page):
 
     def route_change(route):
         page.views.clear()
-        page.views.append(pages[page.route])
+        new_view = pages[route.route]
+        page.views.append(new_view)
+        page.update()
 
     page.on_route_change = route_change
     page.go(page.route)
